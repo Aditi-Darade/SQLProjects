@@ -1,0 +1,40 @@
+USE SAMPLEDB
+GO
+
+--11111111111111111111111111111111111111111111111111111111111111
+SELECT *
+FROM hcm.employees
+WHERE city = 'Seattle' OR city = 'Sydney';
+
+--2222222222222222222222222222222222222222222222222222222222222
+
+SELECT *
+FROM hcm.employees
+WHERE city IN ('Seattle', 'Sydney', 'Ascot', 'Hillston');
+
+--OR
+
+SELECT *
+FROM hcm.employees
+WHERE city = 'Seattle' OR city = 'Sydney' OR city = 'Ascot' OR city = 'Hillston';
+
+--3333333333333333333333333333333333333333333333333333333333333333333
+SELECT *
+FROM hcm.employees
+WHERE city = 'Sydney' AND salary > 200000;
+
+--444444444444444444444444444444444444444444444444444444444444444444
+SELECT *
+FROM hcm.employees
+WHERE (city = 'Seattle' OR city = 'Sydney') AND hire_date >= '2019-01-01';
+
+--55555555555555555555555555555555555555555555555555555555555555555555
+SELECT *
+FROM oes.products
+WHERE category_id <> 1 AND category_id <> 2 AND category_id <> 5;
+
+--OR
+
+SELECT *
+FROM oes.products
+WHERE category_id NOT IN (1, 2, 5);
